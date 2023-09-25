@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 高度 0.09765625，距離 299.609375
+
+
+        let input = prompt('今天有一顆球從 100 公尺高度自由落下，每次落地後反跳回原高度的一半再落下，請問您要計算第幾次落地時的數據？')
+        console.log(100*(1/2**input))
+
+        total = 0
+        for(i=100;i>100*(1/2**input);i=i/2){
+            total = total + i
+            console.log(total)
+            if(i == 100*(1/2**(input-1))){
+                document.write(`當球第 ${input} 次落地時，它總共經過了${(total*2)-100}公尺`)
+            }
+            }
+        document.write(`<br>`)
+        document.write(`這顆球在第 ${input} 次反彈時，彈起了 ${100*(1/2**input)}公尺`)
+
+        // for(i=1;i<=input;i++){
+        //     if(i<input){
+        //         continue
+        //     }
+        //     document.write(100*(1/2**i))
+        //     console.log(i)
+        // }
+    </script>
+</body>
+</html>
